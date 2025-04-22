@@ -20,12 +20,16 @@ require 'vendor/autoload.php';
 $server = new \Pronskiy\Mcp\Server('simple-mcp-server');
 
 $server
-    ->tool('add-numbers', 'Adds two numbers together', function(float $num1, float $num2) {
-        return "The sum of {$num1} and {$num2} is " . ($num1 + $num2);
-    })
-    ->tool('multiply-numbers', 'Multiplies two numbers', function(float $num1, float $num2) {
-        return "The product of {$num1} and {$num2} is " . ($num1 * $num2);
-    })
+    ->tool(
+        'add-numbers',
+        'Adds two numbers together',
+        fn(float $num1, float $num2) => "The sum of {$num1} and {$num2} is " . ($num1 + $num2)
+    )
+    ->tool(
+        'multiply-numbers',
+        'Multiplies two numbers',
+        fn(float $num1, float $num2) => "The product of {$num1} and {$num2} is " . ($num1 * $num2)
+    )
 ;
 
 $server->run();

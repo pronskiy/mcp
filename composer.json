@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "php": "^8.4",
+    "php": "^8.3",
     "logiscape/mcp-sdk-php": "^v1.1.0"
   },
   "require-dev": {
